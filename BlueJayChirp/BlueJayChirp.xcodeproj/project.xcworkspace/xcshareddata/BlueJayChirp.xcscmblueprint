@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "706208E524A05C3B3DDEBC3463EBDFDF9BB58144",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "706208E524A05C3B3DDEBC3463EBDFDF9BB58144" : 9223372036854775807,
+    "2CC2782B492A98EC65C6BAB5A96FAC1FD71C03F6" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "3C0E6974-C35C-434B-9083-73938F27A731",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "706208E524A05C3B3DDEBC3463EBDFDF9BB58144" : "Twitter\/",
+    "2CC2782B492A98EC65C6BAB5A96FAC1FD71C03F6" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "BlueJayChirp",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "BlueJayChirp\/BlueJayChirp.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Deph-Ho\/TipCalculator.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "2CC2782B492A98EC65C6BAB5A96FAC1FD71C03F6"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Deph-Ho\/Twitter.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "706208E524A05C3B3DDEBC3463EBDFDF9BB58144"
+    }
+  ]
+}
