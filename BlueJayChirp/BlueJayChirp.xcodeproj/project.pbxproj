@@ -8,11 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		65BCAFFC1E5CACD00099CBA4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BCAFFB1E5CACD00099CBA4 /* AppDelegate.swift */; };
-		65BCAFFE1E5CACD00099CBA4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BCAFFD1E5CACD00099CBA4 /* ViewController.swift */; };
 		65BCB0011E5CACD00099CBA4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65BCAFFF1E5CACD00099CBA4 /* Main.storyboard */; };
 		65BCB0031E5CACD00099CBA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65BCB0021E5CACD00099CBA4 /* Assets.xcassets */; };
 		65BCB0061E5CACD00099CBA4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65BCB0041E5CACD00099CBA4 /* LaunchScreen.storyboard */; };
 		65BCB0131E5CAFAE0099CBA4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BCB0121E5CAFAE0099CBA4 /* LoginViewController.swift */; };
+		65BCB03E1E6373A50099CBA4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BCB03D1E6373A50099CBA4 /* User.swift */; };
+		65BCB0401E6373B50099CBA4 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BCB03F1E6373B50099CBA4 /* Tweet.swift */; };
+		65BCB0431E637FA80099CBA4 /* TwitterClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BCB0421E637FA80099CBA4 /* TwitterClient.swift */; };
+		65BCB0451E63924D0099CBA4 /* TweetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BCB0441E63924D0099CBA4 /* TweetsViewController.swift */; };
 		B580B7D825CD397EE3343440 /* Pods_BlueJayChirp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C712C3A0DDB5788DEB53C773 /* Pods_BlueJayChirp.framework */; };
 /* End PBXBuildFile section */
 
@@ -20,12 +23,15 @@
 		0FFB964FB29A83AC513DD861 /* Pods-BlueJayChirp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlueJayChirp.release.xcconfig"; path = "Pods/Target Support Files/Pods-BlueJayChirp/Pods-BlueJayChirp.release.xcconfig"; sourceTree = "<group>"; };
 		65BCAFF81E5CACD00099CBA4 /* BlueJayChirp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlueJayChirp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65BCAFFB1E5CACD00099CBA4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		65BCAFFD1E5CACD00099CBA4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		65BCB0001E5CACD00099CBA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		65BCB0021E5CACD00099CBA4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		65BCB0051E5CACD00099CBA4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		65BCB0071E5CACD00099CBA4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65BCB0121E5CAFAE0099CBA4 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		65BCB03D1E6373A50099CBA4 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		65BCB03F1E6373B50099CBA4 /* Tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
+		65BCB0421E637FA80099CBA4 /* TwitterClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterClient.swift; sourceTree = "<group>"; };
+		65BCB0441E63924D0099CBA4 /* TweetsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetsViewController.swift; sourceTree = "<group>"; };
 		8FB98A028A9941A90B195765 /* Pods-BlueJayChirp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BlueJayChirp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BlueJayChirp/Pods-BlueJayChirp.debug.xcconfig"; sourceTree = "<group>"; };
 		C712C3A0DDB5788DEB53C773 /* Pods_BlueJayChirp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BlueJayChirp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -63,6 +69,7 @@
 		65BCAFFA1E5CACD00099CBA4 /* BlueJayChirp */ = {
 			isa = PBXGroup;
 			children = (
+				65BCB0411E637F830099CBA4 /* API */,
 				65BCB0111E5CAF8C0099CBA4 /* Controllers */,
 				65BCB00F1E5CAF670099CBA4 /* Models */,
 				65BCB00D1E5CAF4C0099CBA4 /* Views */,
@@ -85,6 +92,8 @@
 		65BCB00F1E5CAF670099CBA4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				65BCB03D1E6373A50099CBA4 /* User.swift */,
+				65BCB03F1E6373B50099CBA4 /* Tweet.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -92,10 +101,18 @@
 		65BCB0111E5CAF8C0099CBA4 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				65BCAFFD1E5CACD00099CBA4 /* ViewController.swift */,
 				65BCB0121E5CAFAE0099CBA4 /* LoginViewController.swift */,
+				65BCB0441E63924D0099CBA4 /* TweetsViewController.swift */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		65BCB0411E637F830099CBA4 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				65BCB0421E637FA80099CBA4 /* TwitterClient.swift */,
+			);
+			name = API;
 			sourceTree = "<group>";
 		};
 		8F50C3DD9EAAF8F20F49386C /* Frameworks */ = {
@@ -238,8 +255,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65BCB03E1E6373A50099CBA4 /* User.swift in Sources */,
+				65BCB0401E6373B50099CBA4 /* Tweet.swift in Sources */,
 				65BCB0131E5CAFAE0099CBA4 /* LoginViewController.swift in Sources */,
-				65BCAFFE1E5CACD00099CBA4 /* ViewController.swift in Sources */,
+				65BCB0451E63924D0099CBA4 /* TweetsViewController.swift in Sources */,
+				65BCB0431E637FA80099CBA4 /* TwitterClient.swift in Sources */,
 				65BCAFFC1E5CACD00099CBA4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

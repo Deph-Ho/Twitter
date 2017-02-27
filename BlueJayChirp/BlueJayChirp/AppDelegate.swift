@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  BlueJayChirp
 //
-//  Created by Derek Ho on 2/21/17.
+//  Created by Dephanie Ho on 2/21/17.
 //  Copyright © 2017 Dephanie Ho. All rights reserved.
 //
 
@@ -14,9 +14,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        if User.currentUser != nil{
+            print("There is a current user")
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "TweetsNavgiationController")
+            
+            window?.rootViewController = vc
+        }
+        NotificationCenter.default.addObserver(forName: NSNotification.Name(User.userDidLogoutNotification), object: nil, queue: OperationQueue.main) { (Notification) in
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "TweetsNavgiationController")
+            
+            self.window?.rootViewController = vc
+        }
         return true
     }
 
@@ -42,35 +55,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-        let requestToken = BDBOAuth1Credential(queryString: url.query)
         
-        let twitterClient = BDBOAuth1SessionManager(baseURL: URL(string:"https://api.twitter.com")!, consumerKey: "CXrLx7Ni7ROw3LzHQJTGsU0c1", consumerSecret: "3iN9oZOMLb7tZKOoo9lId4BWGfhmwT3bQ5ZfqHJcxQuv3P62Jz")
-        
-        twitterClient?.fetchAccessToken(withPath: "oauth/access_token", method: "POST", requestToken: requestToken, success: { (accessToken:BDBOAuth1Credential?) in
-            print("I got the access token!")
-            
-            twitterClient?.get("1.1/account/verify_credentials.json", parameters: nil, progress: nil, success: { (task: URLSessionDataTask, response: Any?) in
-                print("account: \(response)")
-                let user = response as! NSDictionary
-                print("name: \(user["name"])")
-                
-            }, failure: { (task: URLSessionDataTask?, error: Error) in
-                //
-            })
-            
-            twitterClient?.get("1.1/statuses/home_timeline.json", parameters: nil, progress: nil, success: { (task: URLSessionDataTask, response: Any?) in
-                let tweets = response as! [NSDictionary]
-                
-                for tweet in tweets{
-                    print ("\(tweet["text"]!)")
-                }
-            }, failure: { (task: URLSessionDataTask?, error: Error) in
-                //
-            })
-            
-        }, failure: { (error:Error?) in
-            print("error: \(error?.localizedDescription)")
-        })
+        TwitterClient.sharedInstance?.handleOpenUrl(url: url)
         
         return true
     }
