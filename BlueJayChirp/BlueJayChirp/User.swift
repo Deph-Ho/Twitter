@@ -56,7 +56,7 @@ class User: NSObject {
             
             if let user = user{
                 let data = try! JSONSerialization.data(withJSONObject: user.dictionary!, options: [])
-                defaults.set(user, forKey: "currentUserData")
+                defaults.set(data, forKey: "currentUserData")
                 
             } else {
                 defaults.removeObject(forKey: "currentUserData")
