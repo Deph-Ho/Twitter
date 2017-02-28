@@ -2,7 +2,7 @@
 //  TweetCell.swift
 //  BlueJayChirp
 //
-//  Created by Derek Ho on 2/27/17.
+//  Created by Dephanie Ho on 2/27/17.
 //  Copyright © 2017 Dephanie Ho. All rights reserved.
 //
 
@@ -12,7 +12,6 @@ class TweetCell: UITableViewCell {
 
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var tweetLabel: UILabel!
     @IBOutlet weak var timeStampLabel: UILabel!
     @IBOutlet weak var tweetCountLabel: UILabel!
@@ -20,7 +19,11 @@ class TweetCell: UITableViewCell {
     
     var tweet: Tweet!{
         didSet{
-            profileImage.setImageWith(((tweet.user)?.profileURL)!)
+            
+            if let profileURL = tweet.user!.profileURL{
+                profileImage.setImageWith(profileURL)
+            }
+            
             profileImage.layer.cornerRadius = 5
             nameLabel.text = tweet.user?.name
             tweetLabel.text = tweet.text
@@ -28,7 +31,7 @@ class TweetCell: UITableViewCell {
             favoriteCountLabel.text = String(tweet.retweetCount)
             
             let formatter = DateFormatter()
-            formatter.dateFormat = "EEE MMM d HH:mm:ss Z y"
+            formatter.dateFormat = "EEE MMM d HH:mm"
             self.timeStampLabel.text = formatter.string(from: tweet.timestamp!)
             
         }

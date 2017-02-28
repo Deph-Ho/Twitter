@@ -20,7 +20,7 @@ class Tweet: NSObject {
     //Initialize from data in API
     init(dictionary: NSDictionary){
         text = dictionary["text"] as? String
-        //user = User(dictionary: dictionary["user"] as! NSDictionary)
+        user = User(dictionary: dictionary["user"] as! NSDictionary)
         
         retweetCount = (dictionary["retweet_count"] as? Int) ?? 0
         favoriteCount = (dictionary["favourites_count"] as? Int) ?? 0
