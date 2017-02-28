@@ -14,16 +14,47 @@ class Tweet: NSObject {
     var user: User?
     var text: String?
     var timestamp: Date?
-    var retweetCount: Int = 0
-    var favoriteCount: Int = 0
+    var retweetCount: Int
+    var favoriteCount: Int
+    var tweetID: String?
+    
+    var favorited: Bool {
+        didSet{
+            if favorited{
+                //print(favoriteCount)
+                self.favoriteCount += 1
+                TwitterClient.sharedInstance?.favorite(tweetID: tweetID, favorite: true)
+            } else {
+                self.favoriteCount -= 1
+                TwitterClient.sharedInstance?.favorite(tweetID: tweetID, favorite: false)
+            }
+        }
+    }
+    
+    var retweeted: Bool {
+        didSet {
+            if retweeted {
+                retweetCount += 1
+                TwitterClient.sharedInstance?.retweet(tweetID: tweetID, completion: { (error: Error?) in
+                })
+            } else {
+                retweetCount -= 1
+                TwitterClient.sharedInstance?.retweet(tweetID: tweetID, completion: { (error: Error?) in
+                })
+            }
+        }
+    }
     
     //Initialize from data in API
     init(dictionary: NSDictionary){
         text = dictionary["text"] as? String
         user = User(dictionary: dictionary["user"] as! NSDictionary)
-        
+        tweetID = dictionary["id str"] as? String
         retweetCount = (dictionary["retweet_count"] as? Int) ?? 0
         favoriteCount = (dictionary["favourites_count"] as? Int) ?? 0
+        
+        retweeted = (dictionary["retweeted"] as? Bool) ?? false
+        favorited = (dictionary["favorited"] as? Bool) ?? false
         
         let timestampString = dictionary["created_at"] as? String
         

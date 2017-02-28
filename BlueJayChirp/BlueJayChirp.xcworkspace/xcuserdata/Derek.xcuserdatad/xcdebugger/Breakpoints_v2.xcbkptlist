@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BlueJayChirp/Tweet.swift"
-            timestampString = "509917456.221401"
+            timestampString = "509947803.695145"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
             landmarkName = "init(dictionary:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -409,22 +409,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BlueJayChirp/TweetCell.swift"
-            timestampString = "509936805.962416"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
-            landmarkName = "TweetCell"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "BlueJayChirp/TweetsViewController.swift"
             timestampString = "509933194.726864"
             startingColumnNumber = "9223372036854775807"
@@ -442,11 +426,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BlueJayChirp/Tweet.swift"
-            timestampString = "509935260.780411"
+            timestampString = "509947803.695145"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
             landmarkName = "init(dictionary:)"
             landmarkType = "7">
             <Locations>
@@ -458,7 +442,7 @@
                   moduleName = "BlueJayChirp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Derek/Documents/Sourcetree/Codepath/Twitter/BlueJayChirp/BlueJayChirp/Tweet.swift"
-                  timestampString = "509935279.962117"
+                  timestampString = "509942479.512941"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "14"
@@ -473,7 +457,7 @@
                   moduleName = "BlueJayChirp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Derek/Documents/Sourcetree/Codepath/Twitter/BlueJayChirp/BlueJayChirp/Tweet.swift"
-                  timestampString = "509935279.963693"
+                  timestampString = "509942479.51543"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -481,6 +465,38 @@
                   offsetFromSymbolStart = "4">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BlueJayChirp/TwitterClient.swift"
+            timestampString = "509940756.362902"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "favorite(tweetID:favorite:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BlueJayChirp/TweetCell.swift"
+            timestampString = "509947895.148281"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "onFavorite(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

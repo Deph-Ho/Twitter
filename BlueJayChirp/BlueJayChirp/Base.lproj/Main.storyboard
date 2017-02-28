@@ -96,20 +96,6 @@
                                                     <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="retweet-icon" translatesAutoresizingMaskIntoConstraints="NO" id="cN1-VO-NIP">
-                                                    <rect key="frame" x="151" y="108" width="20" height="20"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="20" id="rEQ-zV-iiS"/>
-                                                        <constraint firstAttribute="width" constant="20" id="ray-rf-53N"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="favor-icon-red" translatesAutoresizingMaskIntoConstraints="NO" id="pFQ-Rw-w3V">
-                                                    <rect key="frame" x="223" y="108" width="20" height="20"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="20" id="Ez1-ov-C1D"/>
-                                                        <constraint firstAttribute="height" constant="20" id="L9K-ki-6bJ"/>
-                                                    </constraints>
-                                                </imageView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="reply-icon" translatesAutoresizingMaskIntoConstraints="NO" id="w5r-1b-W6n">
                                                     <rect key="frame" x="85" y="109" width="20" height="20"/>
                                                     <constraints>
@@ -123,36 +109,60 @@
                                                     <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jWC-Mk-aeH">
+                                                    <rect key="frame" x="225" y="108" width="20" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="YFL-oR-fQu"/>
+                                                        <constraint firstAttribute="width" constant="20" id="peK-Ep-H0l"/>
+                                                    </constraints>
+                                                    <state key="normal" image="favor-icon"/>
+                                                    <connections>
+                                                        <action selector="onFavorite:" destination="kR4-3P-cIo" eventType="touchUpInside" id="1DW-NP-c2S"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4US-o9-G7s">
+                                                    <rect key="frame" x="156" y="109" width="20" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="1zW-kH-UOx"/>
+                                                        <constraint firstAttribute="width" constant="20" id="92e-IJ-yS0"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button" image="retweet-icon"/>
+                                                    <connections>
+                                                        <action selector="onRetweet:" destination="kR4-3P-cIo" eventType="touchUpInside" id="8bo-JM-e8m"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="pFQ-Rw-w3V" firstAttribute="leading" secondItem="K2d-OE-Ifu" secondAttribute="trailing" constant="25" id="0td-Hs-Sxe"/>
                                                 <constraint firstItem="2s2-My-FWG" firstAttribute="top" secondItem="5bY-aw-h7a" secondAttribute="top" constant="8" id="5v1-k4-yVR"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="V2f-DS-qIV" secondAttribute="trailing" constant="10" id="6nr-wL-kLE"/>
                                                 <constraint firstAttribute="bottom" secondItem="K2d-OE-Ifu" secondAttribute="bottom" constant="8" id="7vQ-fA-XEe"/>
                                                 <constraint firstItem="w5r-1b-W6n" firstAttribute="top" relation="greaterThanOrEqual" secondItem="V2f-DS-qIV" secondAttribute="bottom" constant="10" id="93d-WA-N9c"/>
-                                                <constraint firstItem="UtF-zd-WcF" firstAttribute="leading" secondItem="pFQ-Rw-w3V" secondAttribute="trailing" constant="5" id="9z6-6A-0lw"/>
-                                                <constraint firstItem="K2d-OE-Ifu" firstAttribute="leading" secondItem="cN1-VO-NIP" secondAttribute="trailing" constant="5" id="AK3-6i-hHa"/>
                                                 <constraint firstItem="V2f-DS-qIV" firstAttribute="top" secondItem="NMC-rs-pJs" secondAttribute="bottom" constant="8" id="Gpl-3R-juA"/>
                                                 <constraint firstItem="GAg-iz-h5e" firstAttribute="top" secondItem="5bY-aw-h7a" secondAttribute="top" constant="8" id="ING-pV-lCW"/>
-                                                <constraint firstAttribute="bottom" secondItem="pFQ-Rw-w3V" secondAttribute="bottom" constant="8" id="LX8-GF-cL4"/>
-                                                <constraint firstAttribute="bottom" secondItem="cN1-VO-NIP" secondAttribute="bottom" constant="8" id="Mfj-3K-4WL"/>
+                                                <constraint firstItem="4US-o9-G7s" firstAttribute="leading" secondItem="w5r-1b-W6n" secondAttribute="trailing" constant="46" id="Q9S-0L-ogf"/>
                                                 <constraint firstItem="V2f-DS-qIV" firstAttribute="leading" secondItem="GAg-iz-h5e" secondAttribute="trailing" constant="8" id="SVE-iV-05t"/>
                                                 <constraint firstAttribute="trailing" secondItem="2s2-My-FWG" secondAttribute="trailing" constant="8" id="Suy-Db-mPk"/>
                                                 <constraint firstAttribute="bottom" secondItem="w5r-1b-W6n" secondAttribute="bottom" constant="8" id="ZfF-mh-DLB"/>
                                                 <constraint firstItem="2s2-My-FWG" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="NMC-rs-pJs" secondAttribute="trailing" constant="10" id="adp-Q1-xfm"/>
+                                                <constraint firstItem="jWC-Mk-aeH" firstAttribute="leading" secondItem="K2d-OE-Ifu" secondAttribute="trailing" constant="27" id="dqG-uc-hWg"/>
                                                 <constraint firstItem="NMC-rs-pJs" firstAttribute="leading" secondItem="GAg-iz-h5e" secondAttribute="trailing" constant="8" id="ffK-df-9Am"/>
                                                 <constraint firstAttribute="bottom" secondItem="UtF-zd-WcF" secondAttribute="bottom" constant="8" id="gA1-vs-SzV"/>
-                                                <constraint firstItem="cN1-VO-NIP" firstAttribute="leading" secondItem="w5r-1b-W6n" secondAttribute="trailing" constant="46" id="haP-k1-rku"/>
+                                                <constraint firstItem="UtF-zd-WcF" firstAttribute="leading" secondItem="jWC-Mk-aeH" secondAttribute="trailing" constant="5" id="kOH-iq-sTz"/>
                                                 <constraint firstItem="w5r-1b-W6n" firstAttribute="leading" relation="lessThanOrEqual" secondItem="5bY-aw-h7a" secondAttribute="leading" constant="85" id="o4d-RE-ccA"/>
+                                                <constraint firstAttribute="bottom" secondItem="4US-o9-G7s" secondAttribute="bottom" constant="8" id="sqw-Yj-1ns"/>
+                                                <constraint firstAttribute="bottom" secondItem="jWC-Mk-aeH" secondAttribute="bottom" constant="8" id="tal-Zx-Pp6"/>
+                                                <constraint firstItem="K2d-OE-Ifu" firstAttribute="leading" secondItem="4US-o9-G7s" secondAttribute="trailing" constant="5" id="uhB-gJ-8Yb"/>
                                                 <constraint firstItem="NMC-rs-pJs" firstAttribute="top" secondItem="5bY-aw-h7a" secondAttribute="top" constant="8" id="vtW-Pb-Cy3"/>
                                                 <constraint firstItem="GAg-iz-h5e" firstAttribute="leading" secondItem="5bY-aw-h7a" secondAttribute="leading" constant="8" id="xmo-IR-VJM"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="UtF-zd-WcF" secondAttribute="trailing" constant="10" id="zRK-oE-NVF"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="favoriteButton" destination="jWC-Mk-aeH" id="eUS-qJ-rgD"/>
                                             <outlet property="favoriteCountLabel" destination="UtF-zd-WcF" id="4nm-KD-KQ3"/>
                                             <outlet property="nameLabel" destination="NMC-rs-pJs" id="MOi-ti-vX9"/>
                                             <outlet property="profileImage" destination="GAg-iz-h5e" id="2Am-IM-DSl"/>
+                                            <outlet property="retweetButton" destination="4US-o9-G7s" id="nXi-qs-iFp"/>
                                             <outlet property="timeStampLabel" destination="2s2-My-FWG" id="Zp6-Iz-Dk9"/>
                                             <outlet property="tweetCountLabel" destination="K2d-OE-Ifu" id="OeK-Wy-UuQ"/>
                                             <outlet property="tweetLabel" destination="V2f-DS-qIV" id="OsA-KX-Omm"/>
@@ -204,7 +214,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="favor-icon-red" width="30" height="30"/>
+        <image name="favor-icon" width="30" height="30"/>
         <image name="reply-icon" width="30" height="30"/>
         <image name="retweet-icon" width="30" height="30"/>
     </resources>
