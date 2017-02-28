@@ -2,7 +2,7 @@
 //  User.swift
 //  BlueJayChirp
 //
-//  Created by Dephanit Ho on 2/21/17.
+//  Created by Dephanie Ho on 2/21/17.
 //  Copyright © 2017 Dephanie Ho. All rights reserved.
 //
 
@@ -42,8 +42,8 @@ class User: NSObject {
                 let userData = defaults.object(forKey: "currentUserData") as? Data
                 
                 if userData != nil{
-                    //let dictionary = try! JSONSerialization.jsonObject(with: userData, options: []) as! NSDictionary
-                    //_currentUser = User(dictionary: dictionary)
+                    let dictionary = try! JSONSerialization.jsonObject(with: userData!, options: []) as! NSDictionary
+                    _currentUser = User(dictionary: dictionary)
                 }
             }
             return _currentUser
