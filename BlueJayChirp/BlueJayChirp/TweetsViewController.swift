@@ -2,7 +2,7 @@
 //  TweetsViewController.swift
 //  BlueJayChirp
 //
-//  Created by Derek Ho on 2/26/17.
+//  Created by Dephanie Ho on 2/26/17.
 //  Copyright © 2017 Dephanie Ho. All rights reserved.
 //
 
@@ -28,14 +28,12 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
             self.tweets = tweets
             self.tableView.reloadData()
             
-            //for tweet in tweets{
-                //print(tweet.text)
-            //}
         }, failure: { (error: Error) in
             print(error.localizedDescription)
         })
         
-        //TwitterClient.sharedInstance?.currentAccount()
+        navigationController?.navigationBar.barTintColor = UIColor(colorLiteralRed: 0.1, green: 0.5, blue:1.0, alpha: 1.0)
+        navigationController?.navigationBar.tintColor = UIColor.init(white:0.5, alpha:1.0)
         
 
         // Do any additional setup after loading the view.

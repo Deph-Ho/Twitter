@@ -16,6 +16,10 @@ class User: NSObject {
     var profileURL: URL?
     var tagline: String?
     var dictionary: NSDictionary?
+    var retweetCount: Int
+    var favoriteCount: Int
+    var tweetID: String?
+
     
     static let userDidLogoutNotification = "UserDidLogout"
     
@@ -24,6 +28,9 @@ class User: NSObject {
         self.dictionary = dictionary
         name = dictionary["name"] as? String
         screenname = dictionary["screen_name"] as? String
+        tweetID = dictionary["id str"] as? String
+        retweetCount = (dictionary["retweet_count"] as? Int) ?? 0
+        favoriteCount = (dictionary["favourites_count"] as? Int) ?? 0
         
         let profileURLString = dictionary["profile_image_url_https"] as? String
         if let profileURLString = profileURLString{

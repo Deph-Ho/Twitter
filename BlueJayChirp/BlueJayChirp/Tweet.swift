@@ -23,10 +23,10 @@ class Tweet: NSObject {
             if favorited{
                 //print(favoriteCount)
                 self.favoriteCount += 1
-                TwitterClient.sharedInstance?.favorite(tweetID: tweetID, favorite: true)
+                TwitterClient.sharedInstance?.favorite(tweetID: tweetID, favorite: true, completion : { (error: Error?) in})
             } else {
                 self.favoriteCount -= 1
-                TwitterClient.sharedInstance?.favorite(tweetID: tweetID, favorite: false)
+                TwitterClient.sharedInstance?.favorite(tweetID: tweetID, favorite: false, completion : {(error: Error?) in})
             }
         }
     }

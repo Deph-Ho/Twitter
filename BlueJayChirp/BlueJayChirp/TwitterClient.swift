@@ -88,13 +88,13 @@ class TwitterClient: BDBOAuth1SessionManager {
 
     }
     
-    func favorite(tweetID: String?, favorite: Bool, completion: @escaping (_ tweet: Tweet?, _ error: Error?) -> (Void) = {_, _ in }) {
+    func favorite(tweetID: String?, favorite: Bool, completion: @escaping (_ error: Error?) -> Void) {
         let endpoint = favorite ? "create" : "destroy"
         post("1.1/favorites/\(endpoint).json", parameters: ["id": tweetID], progress: nil, success: { (operation: URLSessionDataTask, response: Any?) -> Void in
-            let tweet = Tweet(dictionary: response as! NSDictionary)
-            completion(tweet, nil)
+            //let tweet = Tweet(dictionary: response as! NSDictionary)
+            completion(nil)
         }, failure: { (operation: URLSessionDataTask?, error: Error) -> Void in
-            completion(nil, error)
+            completion(error)
         })
     }
     

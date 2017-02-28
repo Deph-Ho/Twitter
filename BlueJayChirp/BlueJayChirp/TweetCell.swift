@@ -82,7 +82,7 @@ class TweetCell: UITableViewCell {
             //selected button
             sender.isSelected = true
             tweet.retweeted = true
-            favoriteCountLabel.text = String(tweet.favoriteCount)
+            tweetCountLabel.text = String(tweet.retweetCount)
             self.retweetButton.setImage(UIImage(named: "retweet-icon-green"), for: UIControlState())
             print("Retweet Selected")
         }

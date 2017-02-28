@@ -2,7 +2,7 @@
 //  LoginViewController.swift
 //  BlueJayChirp
 //
-//  Created by Derek Ho on 2/21/17.
+//  Created by Dephanie Ho on 2/21/17.
 //  Copyright © 2017 Dephanie Ho. All rights reserved.
 //
 
