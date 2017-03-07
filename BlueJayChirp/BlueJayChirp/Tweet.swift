@@ -14,8 +14,8 @@ class Tweet: NSObject {
     var user: User?
     var text: String?
     var timestamp: Date?
-    var retweetCount: Int
-    var favoriteCount: Int
+    var retweetCount: Int = 0
+    var favoriteCount: Int = 0
     var tweetID: String?
     
     var favorited: Bool {

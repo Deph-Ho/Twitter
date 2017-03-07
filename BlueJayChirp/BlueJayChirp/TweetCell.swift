@@ -33,7 +33,7 @@ class TweetCell: UITableViewCell {
             favoriteCountLabel.text = String(self.tweet.favoriteCount)
             
             let formatter = DateFormatter()
-            formatter.dateFormat = "EEE MMM d HH:mm"
+            formatter.dateFormat = "EEE MMM dd hh:mm a"
             self.timeStampLabel.text = formatter.string(from: tweet.timestamp!)
             
         }
