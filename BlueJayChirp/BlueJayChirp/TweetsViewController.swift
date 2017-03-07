@@ -79,7 +79,22 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         tableView.reloadData()
         _refreshControl.endRefreshing()
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //Check that it is detailSegue that is being performed
+        if(segue.identifier == "detailSegue") {
+            //Cell passes itself as the sender
+            let cell = sender as! TweetCell
+            //Get the index path of the cell
+            let indexOfCell = tableView.indexPath(for: cell)
+            //Get the tweet the user selected from the index path row
+            let tweet = tweets[(indexOfCell?.row)!]
+            //Get the new view controller using segue.destination
+            let detailVC = segue.destination as! DetailViewController
+            //Pass the selected object to the new view controller
+            detailVC.detailTweet = tweet
+        }
+    }
     /*
     // MARK: - Navigation
 

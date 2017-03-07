@@ -15,6 +15,9 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var detailTimeLabel: UILabel!
     @IBOutlet weak var retweetCountLabel: UILabel!
     @IBOutlet weak var favoriteCountLabel: UILabel!
+    @IBOutlet weak var retweetButton: UIButton!
+    @IBOutlet weak var favoriteButton: UIButton!
+    @IBOutlet weak var replyButton: UIButton!
     
     var detailTweet: Tweet!
     
@@ -23,16 +26,16 @@ class DetailViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         //Set up the variables 
-        //detailImage.setImageWith((tweet.user?.profileURL)!)
-        //self.detailUserLabel.text = detailTweet.user?.name
-        //detailTweetLabel.text = tweet.text
-        //retweetCountLabel.text = String(tweet.retweetCount)
-        //favoriteCountLabel.text = String(tweet.favoriteCount)
+        detailImage.setImageWith((detailTweet.user?.profileURL)!)
+        self.detailUserLabel.text = detailTweet.user?.name
+        detailTweetLabel.text = detailTweet.text
+        retweetCountLabel.text = String(detailTweet.retweetCount)
+        favoriteCountLabel.text = String(detailTweet.favoriteCount)
         
         //Set up the date
-        //let formatter = DateFormatter()
-        //formatter.dateFormat = "MMM dd hh:mm a"
-        //detailTimeLabel.text = formatter.string(from: tweet.timestamp!)
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MMM dd hh:mm a"
+        detailTimeLabel.text = formatter.string(from: detailTweet.timestamp!)
         
     }
 
@@ -40,14 +43,39 @@ class DetailViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    @IBAction func onRetweet(_ sender: Any) {
-    }
 
-    @IBAction func onReply(_ sender: Any) {
+    @IBAction func onRetweet(_ sender: UIButton) {
+        if(sender.isSelected){
+            //deselect button
+            sender.isSelected = false
+            detailTweet.retweeted = false
+            retweetCountLabel.text = String(detailTweet.retweetCount)
+            self.retweetButton.setImage(UIImage(named: "retweet-icon"), for: UIControlState())
+            print("Retweet deselected")
+        } else {
+            //selected button
+            sender.isSelected = true
+            detailTweet.retweeted = true
+            retweetCountLabel.text = String(detailTweet.retweetCount)
+            self.retweetButton.setImage(UIImage(named: "retweet-icon-green"), for: UIControlState())
+            print("Retweet Selected")
+        }
     }
     
-    @IBAction func onFavorite(_ sender: Any) {
+    @IBAction func onFavorite(_ sender: UIButton) {
+        if(sender.isSelected){
+            sender.isSelected = false
+            detailTweet.favorited = false
+            favoriteCountLabel.text = String(detailTweet.favoriteCount)
+            self.favoriteButton.setImage(UIImage(named: "favor-icon.png"), for: UIControlState())
+            print("Favorite Deselected")
+        } else {
+            sender.isSelected = true
+            detailTweet.favorited = true
+            favoriteCountLabel.text = String(detailTweet.favoriteCount)
+            self.favoriteButton.setImage(UIImage(named: "favor-icon-red.png"), for: UIControlState())
+            print("Favorite Selected")
+        }
     }
     /*
     // MARK: - Navigation

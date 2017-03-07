@@ -2,7 +2,7 @@
 //  ComposeViewController.swift
 //  BlueJayChirp
 //
-//  Created by Derek Ho on 2/28/17.
+//  Created by Dephanie Ho on 2/28/17.
 //  Copyright © 2017 Dephanie Ho. All rights reserved.
 //
 

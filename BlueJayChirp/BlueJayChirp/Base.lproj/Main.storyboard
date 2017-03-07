@@ -144,7 +144,7 @@
                                                         <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
-                                                        <segue destination="rsJ-VL-stp" kind="presentation" id="hmf-Qt-jc0"/>
+                                                        <segue destination="rsJ-VL-stp" kind="presentation" identifier="profileSegue" id="hmf-Qt-jc0"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -182,7 +182,7 @@
                                             <outlet property="timeStampLabel" destination="2s2-My-FWG" id="Zp6-Iz-Dk9"/>
                                             <outlet property="tweetCountLabel" destination="K2d-OE-Ifu" id="OeK-Wy-UuQ"/>
                                             <outlet property="tweetLabel" destination="V2f-DS-qIV" id="OsA-KX-Omm"/>
-                                            <segue destination="f7z-Ne-Iiv" kind="show" id="G0i-52-fAN"/>
+                                            <segue destination="f7z-Ne-Iiv" kind="show" identifier="detailSegue" id="G0i-52-fAN"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -207,7 +207,7 @@
                             <barButtonItem title="Item" image="edit-icon" id="YRY-fQ-n0u">
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <segue destination="Qt1-PO-lUg" kind="presentation" id="Cua-sO-IAT"/>
+                                    <segue destination="Qt1-PO-lUg" kind="presentation" identifier="composeSegue" id="Cua-sO-IAT"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem image="camera-icon" id="6jQ-IH-Wpe">
@@ -249,7 +249,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tweet" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xdb-YP-hPj">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Tweet" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xdb-YP-hPj">
                                 <rect key="frame" x="8" y="151" width="44" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="textColor"/>
@@ -310,9 +310,6 @@
                                     <constraint firstAttribute="height" constant="30" id="j1D-Mt-2r4"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="reply-icon"/>
-                                <connections>
-                                    <action selector="onRetweet:" destination="f7z-Ne-Iiv" eventType="touchUpInside" id="IrK-Rb-QY5"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u9P-dt-VUd">
                                 <rect key="frame" x="103" y="294" width="29" height="30"/>
@@ -322,7 +319,7 @@
                                 </constraints>
                                 <state key="normal" title="Button" image="retweet-icon"/>
                                 <connections>
-                                    <action selector="onReply:" destination="f7z-Ne-Iiv" eventType="touchUpInside" id="diF-oG-s1h"/>
+                                    <action selector="onRetweet:" destination="f7z-Ne-Iiv" eventType="touchUpInside" id="u6y-gE-Fyj"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zRS-Vl-Ufh">
@@ -376,7 +373,7 @@
                             <constraint firstItem="4JK-97-HQJ" firstAttribute="top" secondItem="SvI-A0-m5v" secondAttribute="bottom" constant="3" id="i6P-Pt-dda"/>
                             <constraint firstItem="M9m-rq-w5v" firstAttribute="top" relation="lessThanOrEqual" secondItem="bC7-L8-8yH" secondAttribute="bottom" constant="300" id="lT2-Vb-7fO"/>
                             <constraint firstItem="SvI-A0-m5v" firstAttribute="leading" secondItem="uDK-qI-8bN" secondAttribute="leading" constant="16" id="lzj-2K-T5U"/>
-                            <constraint firstItem="wbp-gE-tvl" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Xdb-YP-hPj" secondAttribute="bottom" constant="20" id="m2Q-Fl-Ouj"/>
+                            <constraint firstItem="wbp-gE-tvl" firstAttribute="top" secondItem="Xdb-YP-hPj" secondAttribute="bottom" constant="8" id="m2Q-Fl-Ouj"/>
                             <constraint firstItem="bC7-L8-8yH" firstAttribute="top" secondItem="u9P-dt-VUd" secondAttribute="bottom" constant="3" id="na1-St-Ix9"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="4Fi-LR-fOW" secondAttribute="trailing" constant="20" id="nzn-3e-Spf"/>
                             <constraint firstItem="wbp-gE-tvl" firstAttribute="leading" secondItem="uDK-qI-8bN" secondAttribute="leading" constant="16" id="pb0-qX-8pd"/>
@@ -407,7 +404,10 @@
                         <outlet property="detailTimeLabel" destination="wbp-gE-tvl" id="SxL-Et-Vzm"/>
                         <outlet property="detailTweetLabel" destination="Xdb-YP-hPj" id="FVR-F9-fAD"/>
                         <outlet property="detailUserLabel" destination="4Fi-LR-fOW" id="Fg4-YM-OE3"/>
+                        <outlet property="favoriteButton" destination="zRS-Vl-Ufh" id="MyF-Rj-FA4"/>
                         <outlet property="favoriteCountLabel" destination="grA-Op-ohv" id="dT6-ZW-N97"/>
+                        <outlet property="replyButton" destination="sUt-0g-joa" id="Syr-eW-8mL"/>
+                        <outlet property="retweetButton" destination="u9P-dt-VUd" id="2g4-eT-DRI"/>
                         <outlet property="retweetCountLabel" destination="Qe1-wJ-Kbt" id="lBE-TI-S3m"/>
                     </connections>
                 </viewController>
