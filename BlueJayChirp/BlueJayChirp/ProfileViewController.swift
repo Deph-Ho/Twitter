@@ -1,41 +1,38 @@
 //
-//  ComposeViewController.swift
+//  ProfileViewController.swift
 //  BlueJayChirp
 //
-//  Created by Dephanie Ho on 2/28/17.
+//  Created by Dephanie Ho on 3/7/17.
 //  Copyright © 2017 Dephanie Ho. All rights reserved.
 //
 
 import UIKit
 
-class ComposeViewController: UIViewController {
+class ProfileViewController: UIViewController {
     
-    @IBOutlet weak var composeImageView: UIImageView!
-    @IBOutlet weak var composeUserLabel: UILabel!
-    @IBOutlet weak var composeTextView: UITextView!
+    @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var tweetCountLabel: UILabel!
+    @IBOutlet weak var followingCountLabel: UILabel!
+    @IBOutlet weak var followerCountLabel: UILabel!
     
-    var user = User.currentUser
+    var user : User!
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        composeUserLabel.text = user?.name
-        composeImageView.setImageWith((user?.profileURL)!)
+        //profileImageView.setImageWith((user?.profileURL)!)
+        followerCountLabel.text = String(user.followersCount)
+        followingCountLabel.text = String(user.followingCount)
+        tweetCountLabel.text = String(user.tweetCount)
         
-        composeTextView.sizeToFit()
-        composeTextView.becomeFirstResponder()
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
     /*
     // MARK: - Navigation

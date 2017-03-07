@@ -415,10 +415,10 @@
             </objects>
             <point key="canvasLocation" x="2373.5999999999999" y="483.50824587706148"/>
         </scene>
-        <!--Login View Controller-->
+        <!--Profile View Controller-->
         <scene sceneID="h9x-Hf-QNZ">
             <objects>
-                <viewController id="rsJ-VL-stp" customClass="LoginViewController" customModule="BlueJayChirp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="rsJ-VL-stp" customClass="ProfileViewController" customModule="BlueJayChirp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5bo-iL-iw2"/>
                         <viewControllerLayoutGuide type="bottom" id="vDk-hV-pSB"/>
@@ -566,6 +566,12 @@
                             <constraint firstItem="Ocg-z3-bjp" firstAttribute="leading" secondItem="PcV-60-YFY" secondAttribute="trailing" constant="19" id="yi9-JW-4CE"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="followerCountLabel" destination="I5B-99-J0B" id="ZMa-Gx-v7p"/>
+                        <outlet property="followingCountLabel" destination="Ocg-z3-bjp" id="3ra-Uj-Fnr"/>
+                        <outlet property="profileImageView" destination="Kae-us-BGE" id="WMx-Mo-Y7S"/>
+                        <outlet property="tweetCountLabel" destination="vA4-M0-rP1" id="fzd-8a-gAc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hpy-sr-VJE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -605,23 +611,22 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="How are you feeling today?" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WwT-sb-8QY">
-                                <rect key="frame" x="16" y="129" width="343" height="30"/>
-                                <nil key="textColor"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="A2P-mr-yTg">
+                                <rect key="frame" x="16" y="129" width="343" height="129"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="A2P-mr-yTg" secondAttribute="trailing" constant="16" id="1i4-kI-DLv"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="NWw-YW-8bz" secondAttribute="trailing" constant="10" id="BYh-AS-kdG"/>
-                            <constraint firstItem="WwT-sb-8QY" firstAttribute="top" secondItem="wU3-wu-ETh" secondAttribute="bottom" constant="8" id="BdP-0n-oXl"/>
                             <constraint firstItem="wU3-wu-ETh" firstAttribute="top" secondItem="D8T-36-vJj" secondAttribute="bottom" constant="8" id="E0F-Fo-Kvf"/>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="WwT-sb-8QY" secondAttribute="trailing" constant="16" id="YrP-bt-QgM"/>
-                            <constraint firstItem="WwT-sb-8QY" firstAttribute="leading" secondItem="0m6-LE-Dzn" secondAttribute="leading" constant="8" id="ads-xz-5hg"/>
+                            <constraint firstItem="A2P-mr-yTg" firstAttribute="top" secondItem="wU3-wu-ETh" secondAttribute="bottom" constant="8" id="RuR-mg-g2E"/>
+                            <constraint firstItem="A2P-mr-yTg" firstAttribute="leading" secondItem="0m6-LE-Dzn" secondAttribute="leading" constant="16" id="dDq-eg-N3q"/>
                             <constraint firstAttribute="trailing" secondItem="D8T-36-vJj" secondAttribute="trailing" id="fCS-Fk-vj4"/>
                             <constraint firstItem="D8T-36-vJj" firstAttribute="leading" secondItem="0m6-LE-Dzn" secondAttribute="leading" id="hLK-zl-v2o"/>
-                            <constraint firstItem="rGy-On-ocd" firstAttribute="top" relation="greaterThanOrEqual" secondItem="WwT-sb-8QY" secondAttribute="bottom" constant="16" id="jXa-pH-K39"/>
                             <constraint firstItem="NWw-YW-8bz" firstAttribute="leading" secondItem="wU3-wu-ETh" secondAttribute="trailing" constant="8" id="lHJ-8e-e3K"/>
                             <constraint firstItem="wU3-wu-ETh" firstAttribute="leading" secondItem="0m6-LE-Dzn" secondAttribute="leading" constant="8" id="phq-8T-deJ"/>
                             <constraint firstItem="D8T-36-vJj" firstAttribute="top" secondItem="0m6-LE-Dzn" secondAttribute="top" id="xWk-Dy-yMf"/>
@@ -630,7 +635,7 @@
                     </view>
                     <connections>
                         <outlet property="composeImageView" destination="wU3-wu-ETh" id="Dgv-on-3Uh"/>
-                        <outlet property="composeTextField" destination="WwT-sb-8QY" id="AWQ-nx-Rv8"/>
+                        <outlet property="composeTextView" destination="A2P-mr-yTg" id="oBg-UA-gGm"/>
                         <outlet property="composeUserLabel" destination="NWw-YW-8bz" id="GbU-g4-jOT"/>
                     </connections>
                 </viewController>

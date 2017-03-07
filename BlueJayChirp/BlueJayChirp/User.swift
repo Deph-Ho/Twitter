@@ -19,7 +19,9 @@ class User: NSObject {
     var retweetCount: Int
     var favoriteCount: Int
     var tweetID: String?
-
+    var followersCount: Int
+    var followingCount: Int
+    var tweetCount: Int
     
     static let userDidLogoutNotification = "UserDidLogout"
     
@@ -37,6 +39,9 @@ class User: NSObject {
             profileURL = URL(string: profileURLString as String)
         }
         tagline = dictionary["description"] as? String
+        followersCount = (dictionary["followers_count"] as? Int) ?? 0
+        followingCount = (dictionary["friends_count"] as? Int) ?? 0
+        tweetCount = (dictionary["statuses_count"] as? Int) ?? 0
     }
     
     static var _currentUser: User?

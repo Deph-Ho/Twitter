@@ -63,6 +63,9 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         let tweet = tweets[indexPath.row]
         cell.tweet = tweet
         
+        //Assign cell's delegate to his view controller for tapping
+        cell.tag = indexPath.row
+        cell.delegate = self        
         return cell
     }
     
@@ -94,7 +97,13 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
             //Pass the selected object to the new view controller
             detailVC.detailTweet = tweet
         }
+        if(segue.identifier == "profileSegue") {
+            
+            //let profileVC = segue.destination as! ProfileViewController
+            //profileVC.user = user
+        }
     }
+    
     /*
     // MARK: - Navigation
 
@@ -105,4 +114,15 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
     }
     */
 
+}
+
+extension TweetsViewController: TweetCellDelegate{
+    func profileImageViewTapped(cell: TweetCell, user: User) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let profileVC = storyboard.instantiateViewController(withIdentifier: "ProfileViewController") as? ProfileViewController{
+            //Set user before moving to profileView
+            profileVC.user = user
+            self.navigationController?.pushViewController(profileVC, animated: true)
+        }
+    }
 }

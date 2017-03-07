@@ -8,9 +8,28 @@
 
 import UIKit
 
-class TweetCell: UITableViewCell {
+protocol TweetCellDelegate : class {
+    func profileImageViewTapped(cell: TweetCell, user: User)
+}
 
-    @IBOutlet weak var profileImage: UIImageView!
+class TweetCell: UITableViewCell {
+    //weak var to retain cycle
+    weak var delegate: TweetCellDelegate?
+
+    @IBOutlet weak var profileImage: UIImageView! {
+        didSet{
+            self.profileImage.isUserInteractionEnabled = true
+            //tap for profileImage
+            let userProfileTap = UITapGestureRecognizer(target: self, action: #selector(userProfileTapped(_gesture:)))
+            self.profileImage.addGestureRecognizer(userProfileTap)
+        }
+    }
+    //Create corresponding selector method in the cell
+    func userProfileTapped(_gesture: UITapGestureRecognizer) {
+        if let delegate = delegate {
+            delegate.profileImageViewTapped(cell: self, user: self.tweet.user!)
+        }
+    }
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var tweetLabel: UILabel!
     @IBOutlet weak var timeStampLabel: UILabel!
