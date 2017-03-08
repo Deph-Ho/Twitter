@@ -18,6 +18,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var retweetButton: UIButton!
     @IBOutlet weak var favoriteButton: UIButton!
     @IBOutlet weak var replyButton: UIButton!
+    @IBOutlet weak var detailScreenName: UILabel!
     
     var detailTweet: Tweet!
     
@@ -31,6 +32,7 @@ class DetailViewController: UIViewController {
         detailTweetLabel.text = detailTweet.text
         retweetCountLabel.text = String(detailTweet.retweetCount)
         favoriteCountLabel.text = String(detailTweet.favoriteCount)
+        detailScreenName.text = "@" + "\(detailTweet.user!.screenname!)"
         
         //Set up the date
         let formatter = DateFormatter()
@@ -76,6 +78,9 @@ class DetailViewController: UIViewController {
             self.favoriteButton.setImage(UIImage(named: "favor-icon-red.png"), for: UIControlState())
             print("Favorite Selected")
         }
+    }
+    @IBAction func goBack(_ sender: Any) {
+        _ = navigationController?.popViewController(animated: true)
     }
     /*
     // MARK: - Navigation

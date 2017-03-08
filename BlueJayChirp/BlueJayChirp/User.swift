@@ -14,6 +14,7 @@ class User: NSObject {
     var name: String?
     var screenname: String?
     var profileURL: URL?
+    var profileBgURL: URL?
     var tagline: String?
     var dictionary: NSDictionary?
     var retweetCount: Int
@@ -37,6 +38,10 @@ class User: NSObject {
         let profileURLString = dictionary["profile_image_url_https"] as? String
         if let profileURLString = profileURLString{
             profileURL = URL(string: profileURLString as String)
+        }
+        let profileBgURLString = dictionary["profile_background_image_url_https"] as? String
+        if let profileBgURLString = profileBgURLString{
+            profileBgURL = URL(string: profileBgURLString as String)
         }
         tagline = dictionary["description"] as? String
         followersCount = (dictionary["followers_count"] as? Int) ?? 0

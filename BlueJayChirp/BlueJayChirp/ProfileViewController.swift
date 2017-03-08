@@ -14,6 +14,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var tweetCountLabel: UILabel!
     @IBOutlet weak var followingCountLabel: UILabel!
     @IBOutlet weak var followerCountLabel: UILabel!
+    @IBOutlet weak var profileUserBgImageView: UIImageView!
     
     var user : User!
     
@@ -22,11 +23,12 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        //profileImageView.setImageWith((user?.profileURL)!)
+        profileImageView.setImageWith((user?.profileURL)!)
+        profileUserBgImageView.setImageWith((user?.profileBgURL)!)
         followerCountLabel.text = String(user.followersCount)
         followingCountLabel.text = String(user.followingCount)
         tweetCountLabel.text = String(user.tweetCount)
-        
+        self.title = user.name
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,6 +36,9 @@ class ProfileViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func goBack(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     /*
     // MARK: - Navigation
 
