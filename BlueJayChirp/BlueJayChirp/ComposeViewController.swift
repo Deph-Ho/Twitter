@@ -13,6 +13,7 @@ class ComposeViewController: UIViewController {
     @IBOutlet weak var composeImageView: UIImageView!
     @IBOutlet weak var composeUserLabel: UILabel!
     @IBOutlet weak var composeTextView: UITextView!
+    @IBOutlet weak var composeScreenName: UILabel!
     
     var user = User.currentUser
     
@@ -22,8 +23,9 @@ class ComposeViewController: UIViewController {
         // Do any additional setup after loading the view.
         composeUserLabel.text = user?.name
         composeImageView.setImageWith((user?.profileURL)!)
+        composeScreenName.text = "@" + "\(user!.screenname!)"
         
-        composeTextView.sizeToFit()
+        //composeTextView.sizeToFit()
         composeTextView.becomeFirstResponder()
     }
 
@@ -31,6 +33,10 @@ class ComposeViewController: UIViewController {
         super.viewWillAppear(animated)
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.composeTextView.setContentOffset(CGPoint.zero, animated: false)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
