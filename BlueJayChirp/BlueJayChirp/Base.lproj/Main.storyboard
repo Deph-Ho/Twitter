@@ -418,7 +418,7 @@
         <!--Profile View Controller-->
         <scene sceneID="h9x-Hf-QNZ">
             <objects>
-                <viewController id="rsJ-VL-stp" customClass="ProfileViewController" customModule="BlueJayChirp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileViewController" id="rsJ-VL-stp" customClass="ProfileViewController" customModule="BlueJayChirp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5bo-iL-iw2"/>
                         <viewControllerLayoutGuide type="bottom" id="vDk-hV-pSB"/>
